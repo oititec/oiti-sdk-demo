@@ -32,7 +32,6 @@ fun LoadingDialog(
     loadingProgressIndicatorWidth: Int? = null,
     content: @Composable () -> Unit
 ) {
-    val context = LocalContext.current
     val interceptBackPressed = remember { mutableStateOf(false) }
 
     BackHandler(enabled = isLoading && interceptBackPressed.value) {}
@@ -40,11 +39,6 @@ fun LoadingDialog(
     LaunchedEffect(isLoading) {
         if (isLoading) {
             delay(timeoutMs)
-            Toast.makeText(
-                context,
-                "O carregamento expirou, verifique sua conexão.",
-                Toast.LENGTH_LONG
-            ).show()
             onTimeout?.invoke()
         }
     }
