@@ -88,6 +88,8 @@ class LivenessExecutor(val appkey: String) {
                 setCaptionText("teste caption.")
                 setCaptionColor("#AAAAAA")
                 setBackgroundColor("#1F1F1F")
+                setStatusBarColor("#1F1F1F")
+                setStatusBarIsDarkIcons(false)
                 setBottomSheetColor("#333333")
                 setDocumentTipsInstructionText("teste 1")
                 setDocumentTypesInstructionText("teste 2")
@@ -101,6 +103,8 @@ class LivenessExecutor(val appkey: String) {
                 setTitle("Permissões Necessárias")
                 setTitleColor("#FFFFFF")
                 setBackgroundColor("#1F1F1F")
+                setStatusBarColor("#1F1F1F")
+                setStatusBarIsDarkIcons(false)
                 setCheckPermissionButtonText("Permitir Acesso")
                 setCheckPermissionButtonStyle("#00FF00")
             }
@@ -108,6 +112,8 @@ class LivenessExecutor(val appkey: String) {
             setProcessingTheme {
                 setBackgroundColor("#000000")
                 setLoadingDialogColor("#FFFFFF")
+                setStatusBarColor("#000000")
+                setStatusBarIsDarkIcons(true)
                 setLoadingIndicatorSize(100)
                 setLoadingIndicatorWidth(10)
             }
@@ -117,6 +123,11 @@ class LivenessExecutor(val appkey: String) {
                 setSuccessIcon(br.com.oiti.designsystem.R.drawable.success_icon)
                 setSuccessText("Verificação concluída com sucesso!")
                 setSuccessTextColor("#0F9D58")
+
+                setStatusBarSuccessColor("#DFFFD6")
+                setStatusBarErrorColor("#FFD6D6")
+                setStatusBarSuccessIsDarkIcons(true)
+                setStatusBarErrorIsDarkIcons(true)
 
                 setErrorBackgroundColor("#FFD6D6")
                 setErrorIcon(br.com.oiti.designsystem.R.drawable.error_icon)
@@ -140,12 +151,12 @@ class LivenessExecutor(val appkey: String) {
         }
 
         iProovManager.start(options, object : ResultCallback<LivenessResult> {
-            override fun onSuccess(livenessResponse: LivenessResponse) {
-                execOnSuccess(livenessResponse.livenessResult)
+            override fun onSuccess(result: LivenessResponse) {
+                execOnSuccess(result.livenessResult)
             }
 
-            override fun onError(livenessResponse: LivenessResponse) {
-                execOnError(livenessResponse.errorResponse)
+            override fun onError(result: LivenessResponse) {
+                execOnError(result.errorResponse)
             }
         })
     }
