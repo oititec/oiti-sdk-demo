@@ -35,7 +35,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.oiti.manager.exports.LivenessResult
 import br.com.oiti.oitisdk.demo.components.LoadingDialog
+import br.com.oiti.oitisdk.demo.components.ProdutoToggleButtons
 import br.com.oiti.oitisdk.demo.extensions.format
+import br.com.oiti.oitisdk.demo.model.Features
 import br.com.oiti.oitisdk.demo.ui.theme.OitiSDKTheme
 
 class LivenessActivity : ComponentActivity() {
@@ -51,9 +53,9 @@ class LivenessActivity : ComponentActivity() {
                         isLoading = isLoading,
                         onTimeout = { isLoading = false }
                     ) {
-                        LivenessScreen(modifier = Modifier.padding(inner)) { appKey, onSuccess, onError, isCustomEnabled ->
+                        LivenessScreen(modifier = Modifier.padding(inner)) { appKey, selectedFeature, onSuccess, onError, isCustomEnabled ->
                             isLoading = true
-                            LivenessExecutor(appKey).executeLiveness(
+                            LivenessExecutor(appKey, selectedFeature).executeLiveness(
                                 context = this@LivenessActivity,
                                 execOnSuccess = { result ->
                                     isLoading = false
@@ -78,6 +80,7 @@ fun LivenessScreen(
     modifier: Modifier = Modifier,
     onStartClick: (
         appKey: String,
+        feature: Features,
         onSuccess: (LivenessResult?) -> Unit,
         onError: (String) -> Unit,
         isCustomEnabled: Boolean
@@ -85,6 +88,8 @@ fun LivenessScreen(
 ) {
     var appKey by remember { mutableStateOf("") }
     val resultados = remember { mutableStateListOf<String>() }
+    val features = Features.entries
+    var selectedFeature by remember { mutableStateOf(features.first()) }
 
     Column(
         modifier = modifier
@@ -108,11 +113,20 @@ fun LivenessScreen(
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(Modifier.height(12.dp))
+
+                ProdutoToggleButtons(
+                    features = features,
+                    selected = selectedFeature,
+                    onSelect = { selectedFeature = it }
+                )
+
+                Spacer(Modifier.height(12.dp))
                 Button(
                     onClick = {
                         resultados.clear()
                         onStartClick(
                             appKey,
+                            selectedFeature,
                             { msg -> resultados += "OK: ${msg?.format()}" },
                             { err -> resultados += "ERRO: $err" },
                             false
@@ -130,6 +144,7 @@ fun LivenessScreen(
                         resultados.clear()
                         onStartClick(
                             appKey,
+                            selectedFeature,
                             { msg -> resultados += "OK: ${msg?.format()}" },
                             { err -> resultados += "ERRO: $err" },
                             true
@@ -185,6 +200,6 @@ fun LivenessScreen(
 @Composable
 fun LivenessScreenPreview() {
     OitiSDKTheme {
-        LivenessScreen(onStartClick = { _, _, _, _ -> })
+        LivenessScreen(onStartClick = { _, _, _, _, _ -> })
     }
 }
