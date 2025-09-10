@@ -16,7 +16,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven("https://raw.githubusercontent.com/oititec/android-oiti-sdk-versions-beta/main")
+        maven("https://raw.githubusercontent.com/oititec/android-oiti-sdk-versions/main")
     }
 }
 
