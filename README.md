@@ -6,6 +6,11 @@ Este repositório contém um projeto de demonstração para Oiti-SDK, fornecendo
 
 Através deste demo, você aprenderá a integrar o Oiti-SDK em um aplicativo Android, configurando as dependências necessárias e executando chamadas de exemplo para verificação liveness.
 
+> 💡 **Importante:**  
+> Para simular o cenário de sucesso no IProov é necessário que o APK esteja assinado.  
+> - Em ambiente de desenvolvimento, pode ser usada a assinatura `debug.keystore`.  
+> - Em produção, utilize a assinatura oficial do aplicativo.  
+
 ### Saiba mais
 
 - Conhecer as **ferramentas de prevenção à fraude** e suas funcionalidades: [consulte este link](https://devcenter.certiface.io/docs/certiface-funcionalidades).
