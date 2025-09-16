@@ -15,8 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import br.com.oiti.oitisdk.demo.model.Features
-import br.com.oiti.oitisdk.demo.ui.theme.OitiBlue
-import br.com.oiti.oitisdk.demo.ui.theme.OitiWhite
+import br.com.oiti.oitisdk.demo.ui.theme.CertifaceBlue
+import br.com.oiti.oitisdk.demo.ui.theme.CertifaceWhite
 
 @Composable
 fun ProdutoToggleButtons(
@@ -40,8 +40,8 @@ fun ProdutoToggleButtons(
                     if (isSel) Color.Transparent else MaterialTheme.colorScheme.onSurfaceVariant
                 ),
                 colors = ButtonDefaults.outlinedButtonColors(
-                    containerColor = if (isSel) OitiBlue else MaterialTheme.colorScheme.surfaceVariant,
-                    contentColor = if (isSel) OitiWhite else MaterialTheme.colorScheme.onSurfaceVariant
+                    containerColor = if (isSel) CertifaceBlue else MaterialTheme.colorScheme.surfaceVariant,
+                    contentColor = if (isSel) CertifaceWhite else MaterialTheme.colorScheme.onSurfaceVariant
                 ),
                 contentPadding = PaddingValues(horizontal = 8.dp, vertical = 0.dp)
             ) {

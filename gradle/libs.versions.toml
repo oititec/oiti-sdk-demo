@@ -9,7 +9,7 @@ lifecycleRuntimeKtx = "2.9.3"
 activityCompose = "1.11.0"
 composeBom = "2025.09.00"
 
-oitiSdk = "1.0.0-snapshot"
+oitiSdk = "1.0.0-snapshot-2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }

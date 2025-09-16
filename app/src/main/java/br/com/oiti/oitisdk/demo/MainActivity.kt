@@ -38,7 +38,7 @@ import br.com.oiti.oitisdk.demo.components.LoadingDialog
 import br.com.oiti.oitisdk.demo.components.ProdutoToggleButtons
 import br.com.oiti.oitisdk.demo.extensions.format
 import br.com.oiti.oitisdk.demo.model.Features
-import br.com.oiti.oitisdk.demo.ui.theme.OitiSDKTheme
+import br.com.oiti.oitisdk.demo.ui.theme.CertifaceSDKTheme
 
 class LivenessActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +46,7 @@ class LivenessActivity : ComponentActivity() {
         enableEdgeToEdge()
 
         setContent {
-            OitiSDKTheme {
+            CertifaceSDKTheme {
                 Scaffold { inner ->
                     var isLoading by remember { mutableStateOf(false) }
                     LoadingDialog(
@@ -103,7 +103,7 @@ fun LivenessScreen(
             shape = RoundedCornerShape(8.dp)
         ) {
             Column(modifier = Modifier.padding(16.dp)) {
-                Text("Oiti SDK", fontSize = 20.sp)
+                Text("Certiface SDK", fontSize = 20.sp)
                 Spacer(Modifier.height(8.dp))
                 OutlinedTextField(
                     value = appKey,
@@ -199,7 +199,7 @@ fun LivenessScreen(
 @PreviewLightDark
 @Composable
 fun LivenessScreenPreview() {
-    OitiSDKTheme {
+    CertifaceSDKTheme {
         LivenessScreen(onStartClick = { _, _, _, _, _ -> })
     }
 }

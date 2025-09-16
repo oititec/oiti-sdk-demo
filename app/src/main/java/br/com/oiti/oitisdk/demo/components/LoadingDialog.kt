@@ -1,6 +1,5 @@
 package br.com.oiti.oitisdk.demo.components
 
-import android.widget.Toast
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -16,9 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import br.com.oiti.oitisdk.demo.ui.theme.OitiGreen
+import br.com.oiti.oitisdk.demo.ui.theme.CertifaceGreen
 import kotlinx.coroutines.delay
 
 @Composable
@@ -60,7 +58,7 @@ fun LoadingDialog(
                 CircularProgressIndicator(
                     modifier = Modifier.size((loadingScaleSize ?: 50).dp),
                     strokeWidth = (loadingProgressIndicatorWidth ?: 5).dp,
-                    color = Color(circularProgressIndicatorColor ?: OitiGreen.toArgb())
+                    color = Color(circularProgressIndicatorColor ?: CertifaceGreen.toArgb())
                 )
             }
         } else {

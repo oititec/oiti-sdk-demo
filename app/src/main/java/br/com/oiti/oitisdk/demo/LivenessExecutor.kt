@@ -7,7 +7,7 @@ import br.com.oiti.manager.exports.Environment
 import br.com.oiti.manager.exports.LivenessResult
 import br.com.oiti.manager.exports.ResultCallback
 import br.com.oiti.manager.exports.SDKConfig
-import br.com.oiti.manager.main.OitiSDK
+import br.com.oiti.manager.main.CertifaceSDK
 import br.com.oiti.oitisdk.demo.model.Features
 import br.com.oiti.oitisdk.demo.strategy.FacetecStrategy
 import br.com.oiti.oitisdk.demo.strategy.IProovStrategy
@@ -26,7 +26,7 @@ class LivenessExecutor(val appkey: String, val feature: Features) {
         execOnError: (ErrorResponse?) -> Unit,
         isCustomEnabled: Boolean = false
     ) {
-        OitiSDK.initialize(
+        CertifaceSDK.initialize(
             context,
             SDKConfig(
                 environment = Environment.HML,

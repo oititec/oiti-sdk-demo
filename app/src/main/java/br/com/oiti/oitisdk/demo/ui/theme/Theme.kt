@@ -1,6 +1,5 @@
 package br.com.oiti.oitisdk.demo.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -13,29 +12,29 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
-    primary = OitiBlue,
-    onPrimary = OitiWhite,
-    secondary = OitiGreen,
-    onSecondary = OitiDark,
-    background = OitiDark,
-    onBackground = OitiWhite,
+    primary = CertifaceBlue,
+    onPrimary = CertifaceWhite,
+    secondary = CertifaceGreen,
+    onSecondary = CertifaceDark,
+    background = CertifaceDark,
+    onBackground = CertifaceWhite,
     surface = Color(0xFF1C1C1E),
-    onSurface = OitiWhite
+    onSurface = CertifaceWhite
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = OitiBlue,
-    onPrimary = OitiWhite,
-    secondary = OitiGreen,
-    onSecondary = OitiWhite,
+    primary = CertifaceBlue,
+    onPrimary = CertifaceWhite,
+    secondary = CertifaceGreen,
+    onSecondary = CertifaceWhite,
     background = Color(0xFFF9F9F9),
     onBackground = Color(0xFF000000),
-    surface = OitiWhite,
+    surface = CertifaceWhite,
     onSurface = Color(0xFF000000)
 )
 
 @Composable
-fun OitiSDKTheme(
+fun CertifaceSDKTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = false,
