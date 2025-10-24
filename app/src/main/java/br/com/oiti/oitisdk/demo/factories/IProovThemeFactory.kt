@@ -49,6 +49,10 @@ object IProovThemeFactory {
         setFontsKey(iProovFonts)
         setFilter(FilterTheme.Natural(NaturalStyle.CLEAR))
 
+        setIsScanningPromptsEnabled(false)
+        setIsControlXPositionEnabled(false)
+        setIsControlYPositionEnabled(false)
+
         setOrientation(
             gpa = OrientationGPA.PORTRAIT,
             la = OrientationLA.PORTRAIT
@@ -71,8 +75,8 @@ object IProovThemeFactory {
             setStatusBarColor("#1F1F1F")
             setStatusBarIsDarkIcons(false)
             setBottomSheetColor("#333333")
-            setDocumentTipsInstructionText("teste 1")
-            setDocumentTypesInstructionText("teste 2")
+            setFirstInstructionText("teste 1")
+            setSecondInstructionText("teste 2")
             setBottomSheetCornerRadius(16f)
             setContinueButtonText("Startar")
             setContinueButtonColor("#00FF00")
@@ -82,11 +86,13 @@ object IProovThemeFactory {
         setPermissionTheme {
             setTitle("Permissões Necessárias")
             setTitleColor("#FFFFFF")
+            setSubTitle("Permita o acesso a camera")
+            setSubTitleColor("#0a0a0a")
             setBackgroundColor("#1F1F1F")
             setStatusBarColor("#1F1F1F")
             setStatusBarIsDarkIcons(false)
-            setCheckPermissionButtonText("Permitir Acesso")
-            setCheckPermissionButtonStyle("#00FF00")
+            setPermissionButtonText("Permitir Acesso")
+            setPermissionButtonColor("#00FF00")
         }
 
         setProcessingTheme {

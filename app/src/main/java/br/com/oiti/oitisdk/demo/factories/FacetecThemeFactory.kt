@@ -167,8 +167,8 @@ object FacetecThemeFactory {
             setBackgroundColor("#1F1F1F")
             setStatusBarColor("#1F1F1F")
             setStatusBarIsDarkIcons(false)
-            setCheckPermissionButtonText("Permitir")
-            setCheckPermissionButtonStyle("#0F9D58")
+            setPermissionButtonText("Permitir")
+            setPermissionButtonColor("#0F9D58")
         }
 
         setProcessingTheme {
