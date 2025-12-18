@@ -5,6 +5,7 @@ import br.com.oiti.domain.callback.CertifaceResultCallback
 import br.com.oiti.facetecsdk.domain.model.FacetecManagerOptions
 import br.com.oiti.manager.exports.LivenessResult
 import br.com.oiti.manager.main.CertifaceSDK
+import br.com.oiti.manager.main.LivenessProvider
 import br.com.oiti.oitisdk.demo.factories.FacetecThemeFactory
 
 class FacetecStrategy : LivenessProviderStrategy {
@@ -16,7 +17,7 @@ class FacetecStrategy : LivenessProviderStrategy {
     ) {
         val theme = FacetecThemeFactory.create(isCustom)
         val opts = FacetecManagerOptions(appKey, theme)
-        val mgr = CertifaceSDK.createLivenessManager(CertifaceSDK.LivenessProvider.FACETEC)
+        val mgr = CertifaceSDK.createLivenessManager(LivenessProvider.FACETEC)
         mgr.start(opts, callback)
     }
 }

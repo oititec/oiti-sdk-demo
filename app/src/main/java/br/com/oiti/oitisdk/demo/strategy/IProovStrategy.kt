@@ -5,6 +5,7 @@ import br.com.oiti.domain.callback.CertifaceResultCallback
 import br.com.oiti.iproov.domain.model.IProovManagerOptions
 import br.com.oiti.manager.exports.LivenessResult
 import br.com.oiti.manager.main.CertifaceSDK
+import br.com.oiti.manager.main.LivenessProvider
 import br.com.oiti.oitisdk.demo.factories.IProovThemeFactory
 
 class IProovStrategy : LivenessProviderStrategy {
@@ -16,7 +17,7 @@ class IProovStrategy : LivenessProviderStrategy {
     ) {
         val theme = IProovThemeFactory.create(isCustom)
         val opts = IProovManagerOptions(appKey, theme)
-        val manager = CertifaceSDK.createLivenessManager(CertifaceSDK.LivenessProvider.IPROOV)
+        val manager = CertifaceSDK.createLivenessManager(LivenessProvider.IPROOV)
         manager.start(opts, callback)
     }
 }
